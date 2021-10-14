@@ -26,7 +26,7 @@ public class OrderService {
         payment.setOrderId(order.getId());
         payment.setAmount(order.getAmount());
         // rest api call -- to do the call first we need to inject the rest template
-       Payment paymentResponse =  template.postForObject("http://localhost:9091/payment/doPayment", payment, Payment.class);
+       Payment paymentResponse =  template.postForObject("http://PAYMENT-SERVICE/payment/doPayment", payment, Payment.class);
        response = paymentResponse.getPaymentStatus().equals("success")?"Payment processing successful and placed":"there is a failure in payment api, order added to cart";
       repository.save(order);
       return new TransactionResponse(order, paymentResponse.getAmount(), paymentResponse.getTransactionId(),response);

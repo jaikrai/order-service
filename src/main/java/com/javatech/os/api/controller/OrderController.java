@@ -3,7 +3,6 @@ package com.javatech.os.api.controller;
 import com.javatech.os.api.common.Payment;
 import com.javatech.os.api.common.TransactionRequest;
 import com.javatech.os.api.common.TransactionResponse;
-import com.javatech.os.api.entity.Order;
 import com.javatech.os.api.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
